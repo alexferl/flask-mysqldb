@@ -84,6 +84,6 @@ History
 
 Changes:
 
-- 0.1.0: February 14, 2015
+- 0.1.1: February 14, 2015
 
   - Initial Release
