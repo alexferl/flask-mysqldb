@@ -27,7 +27,7 @@ Next, add a :class:`~flask_mysqldb.MySQL` instance to your code:
 .. code-block:: python
 
     from flask import Flask
-    from flask_mysqldb import MySQL
+    from flask.ext.mysqldb import MySQL
 
     app = Flask(__name__)
     mysql = MySQL(app)
