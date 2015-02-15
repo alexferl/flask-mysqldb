@@ -20,7 +20,7 @@ Next, add a ``MySQL`` instance to your code:
 
 ```python
 from flask import Flask
-from flask_mysqldb import MySQL
+from flask.ext.mysqldb import MySQL
 
 app = Flask(__name__)
 mysql = MySQL(app)
