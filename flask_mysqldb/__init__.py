@@ -1,4 +1,5 @@
 import MySQLdb
+import MySQLdb.cursors
 from flask import _app_ctx_stack, current_app
 
 
@@ -30,6 +31,7 @@ class MySQL(object):
         app.config.setdefault('MYSQL_USE_UNICODE', True)
         app.config.setdefault('MYSQL_CHARSET', 'utf8')
         app.config.setdefault('MYSQL_SQL_MODE', None)
+        app.config.setdefault('MYSQL_CURSORCLASS', None)
 
         if hasattr(app, 'teardown_appcontext'):
             app.teardown_appcontext(self.teardown)
@@ -72,6 +74,9 @@ class MySQL(object):
 
         if current_app.config['MYSQL_SQL_MODE']:
             kwargs['sql_mode'] = current_app.config['MYSQL_SQL_MODE']
+
+        if current_app.config['MYSQL_CURSORCLASS']:
+            kwargs['cursorclass'] = getattr(MySQLdb.cursors, current_app.config['MYSQL_CURSORCLASS'])
 
         return MySQLdb.connect(**kwargs)
 
