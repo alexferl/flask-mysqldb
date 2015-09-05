@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Welcome to Flask-MySQLdb's documentation!
-============================================
+=========================================
 
 Flask-MySQLdb provides MySQL connection for Flask.
 
@@ -66,6 +66,7 @@ directives:
 ``MYSQL_CHARSET``            If present, the connection character set will be changed to this character set,
                              if they are not equal. Default: 'utf-8'
 ``MYSQL_SQL_MODE``           If present, the session SQL mode will be set to the given string.
+``MYSQL_CURSORCLASS``        If present, the cursor class will be set to the given string.
 ============================ ===================================================
 
 
@@ -83,6 +84,10 @@ History
 -------
 
 Changes:
+
+- 0.2.0: September 5, 2015
+
+  - Added option to change the cursor. Thanks to `@Sp1tF1r3 <https://github.com/Sp1tF1r3>`_ on GitHub.
 
 - 0.1.1: February 14, 2015
 
