@@ -28,6 +28,8 @@ Next, add a :class:`~flask_mysqldb.MySQL` instance to your code:
 
     from flask import Flask
     from flask.ext.mysqldb import MySQL
+    # If "from flask.ext.mysqldb import MySQL" doesn't works, try:
+    # from flask_mysqldb import MySQL
 
     app = Flask(__name__)
     mysql = MySQL(app)
