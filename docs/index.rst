@@ -75,6 +75,7 @@ API
 
 Classes
 -------
+
 .. autoclass:: flask_mysqldb.MySQL
    :members:
 
