@@ -1,5 +1,5 @@
 import MySQLdb
-import MySQLdb.cursors
+from MySQLdb import cursors
 from flask import _app_ctx_stack, current_app
 
 
@@ -76,7 +76,7 @@ class MySQL(object):
             kwargs['sql_mode'] = current_app.config['MYSQL_SQL_MODE']
 
         if current_app.config['MYSQL_CURSORCLASS']:
-            kwargs['cursorclass'] = getattr(MySQLdb.cursors, current_app.config['MYSQL_CURSORCLASS'])
+            kwargs['cursorclass'] = getattr(cursors, current_app.config['MYSQL_CURSORCLASS'])
 
         return MySQLdb.connect(**kwargs)
 
