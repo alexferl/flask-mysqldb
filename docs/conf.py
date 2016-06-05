@@ -56,7 +56,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Flask-MySQLdb'
-copyright = u'2015, Alexandre Ferland'
+copyright = u'2016, Alexandre Ferland'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
