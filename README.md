@@ -1,7 +1,7 @@
 Flask-MySQLdb
 ================
 
-[![Build Status](https://travis-ci.org/admiralobvious/flask-mysqldb.png?branch=master)](https://travis-ci.org/admiralobvious/flask-mysqldb)
+[![Build Status](https://travis-ci.org/admiralobvious/flask-mysqldb.svg?branch=master)](https://travis-ci.org/admiralobvious/flask-mysqldb)
 
 Flask-MySQLdb provides MySQL connection for Flask.
 
