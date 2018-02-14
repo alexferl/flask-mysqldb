@@ -14,7 +14,7 @@ First, install Flask-MySQLdb:
     
 Flask-MySQLdb depends, and will install for you, recent versions of Flask
 (0.10.1 or later) and [mysqlclient](https://github.com/PyMySQL/mysqlclient-python). Flask-MySQLdb is compatible
-with and tested on Python 2.7, 3.4 and 3.5.
+with and tested on Python 2.7, 3.4, 3.5 and 3.6.
 
 Next, add a ``MySQL`` instance to your code:
 
@@ -36,6 +36,10 @@ def users():
 if __name__ == '__main__':
     app.run(debug=True)
 ```
+
+Why
+---
+Why would you want to use this extension version just using MySQLdb? The only reason is that the extension was made using Flask best pratice in relation to the app context. What that means is that the extension will manage creating and teardown the connection to MySQL for you while with just MySQLdb you would have to do it yourself. More information about the app context [here](http://flask.pocoo.org/docs/0.12/appcontext/#context-usage) and about extensions [here](http://flask.pocoo.org/docs/0.12/extensiondev/#the-extension-code).
 
 
 Resources
