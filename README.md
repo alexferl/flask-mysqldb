@@ -39,7 +39,7 @@ if __name__ == '__main__':
 
 Why
 ---
-Why would you want to use this extension version just using MySQLdb? The only reason is that the extension was made using Flask best pratice in relation to the app context. What that means is that the extension will manage creating and teardown the connection to MySQL for you while with just MySQLdb you would have to do it yourself. More information about the app context [here](http://flask.pocoo.org/docs/0.12/appcontext/#context-usage) and about extensions [here](http://flask.pocoo.org/docs/0.12/extensiondev/#the-extension-code).
+Why would you want to use this extension versus just using MySQLdb by itself? The only reason is that the extension was made using Flask's best pratices in relation to resources that need caching on the [app context](http://flask.pocoo.org/docs/0.12/appcontext/#context-usage). What that means is that the extension will manage creating and teardown the connection to MySQL for you while with if you were just using MySQLdb you would have to do it yourself.
 
 
 Resources
