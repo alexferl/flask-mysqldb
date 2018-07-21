@@ -23,8 +23,13 @@ from flask import Flask
 from flask_mysqldb import MySQL
 
 app = Flask(__name__)
-mysql = MySQL(app)
 
+app.config['MYSQL_USER'] = 'user'
+app.config['MYSQL_PASSWORD'] = 'password'
+app.config['MYSQL_DB'] = 'database'
+app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
+
+mysql = MySQL(app)
 
 @app.route('/')
 def users():
@@ -36,6 +41,8 @@ def users():
 if __name__ == '__main__':
     app.run(debug=True)
 ```
+
+Other configuration directives can be found [here](http://flask-mysqldb.readthedocs.io/en/latest/#configuration).
 
 Why
 ---
