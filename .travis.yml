@@ -10,8 +10,6 @@ python:
 env:
   - FLASK=1.0.2
   - FLASK=0.12.4
-  - FLASK=0.11.1
-  - FLASK=0.10.1
 install:
   - pip install Flask==$FLASK
   - pip install -r dev_requirements.txt
