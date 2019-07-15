@@ -19,8 +19,8 @@ First, install Flask-MySQLdb:
     $ pip install flask-mysqldb
 
 Flask-MySQLdb depends, and will install for you, recent versions of Flask
-(0.10.1 or later) and mysqlclient. Flask-MySQLdb is compatible
-with and tested on Python 2.7, 3.4 and 3.5.
+(0.12.4 or later) and mysqlclient. Flask-MySQLdb is compatible
+with and tested on Python 2.7, 3.5, 3.6 and 3.7.
 
 Next, add a :class:`~flask_mysqldb.MySQL` instance to your code:
 
@@ -86,9 +86,7 @@ History
 Changes:
 
 - 0.2.0: September 5, 2015
-
   - Added option to change the cursor. Thanks to `@Sp1tF1r3 <https://github.com/Sp1tF1r3>`_ on GitHub.
 
 - 0.1.1: February 14, 2015
-
   - Initial Release
