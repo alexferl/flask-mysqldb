@@ -32,6 +32,7 @@ class MySQL(object):
         app.config.setdefault('MYSQL_CHARSET', 'utf8')
         app.config.setdefault('MYSQL_SQL_MODE', None)
         app.config.setdefault('MYSQL_CURSORCLASS', None)
+        app.config.setdefault('MYSQL_AUTOCOMMIT', False)
 
         if hasattr(app, 'teardown_appcontext'):
             app.teardown_appcontext(self.teardown)
@@ -78,7 +79,7 @@ class MySQL(object):
         if current_app.config['MYSQL_CURSORCLASS']:
             kwargs['cursorclass'] = getattr(cursors, current_app.config['MYSQL_CURSORCLASS'])
 
-        return MySQLdb.connect(**kwargs)
+        return MySQLdb.connect(**kwargs, autocommit=current_app.config['MYSQL_AUTOCOMMIT'])
 
     @property
     def connection(self):
