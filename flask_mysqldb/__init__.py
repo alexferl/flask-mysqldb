@@ -77,9 +77,13 @@ class MySQL(object):
             kwargs['sql_mode'] = current_app.config['MYSQL_SQL_MODE']
 
         if current_app.config['MYSQL_CURSORCLASS']:
-            kwargs['cursorclass'] = getattr(cursors, current_app.config['MYSQL_CURSORCLASS'])
+            kwargs['cursorclass'] = \
+                getattr(cursors, current_app.config['MYSQL_CURSORCLASS'])
 
-        return MySQLdb.connect(**kwargs, autocommit=current_app.config['MYSQL_AUTOCOMMIT'])
+        if current_app.config['MYSQL_AUTOCOMMIT']:
+            kwargs['autocommit'] = current_app.config['MYSQL_AUTOCOMMIT']
+
+        return MySQLdb.connect(**kwargs)
 
     @property
     def connection(self):
