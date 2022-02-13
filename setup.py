@@ -6,16 +6,22 @@ MySQLdb extension for Flask
 """
 from setuptools import setup
 
+from pathlib import Path
+
+this_directory = Path(__file__).parent
+long_description = (this_directory / "README.md").read_text()
+
 
 setup(
     name="Flask-MySQLdb",
     version="1.0.0",
-    url="https://github.com/admiralobvious/flask-mysqldb",
+    url="https://github.com/alexferl/flask-mysqldb",
     license="MIT",
     author="Alexandre Ferland",
     author_email="me@alexferl.com",
     description="MySQLdb extension for Flask",
-    long_description=__doc__,
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     packages=["flask_mysqldb"],
     zip_safe=False,
     include_package_data=True,
