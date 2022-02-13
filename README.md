@@ -35,7 +35,7 @@ app.config["MYSQL_PASSWORD"] = "password"
 app.config["MYSQL_DB"] = "database"
 # Extra configs, optional:
 app.config["MYSQL_CURSORCLASS"] = "DictCursor"
-app.config["MYSQL_EXTRA_KWARGS"] = {"ssl": {"ca": "/path/to/ca-file"}}
+app.config["MYSQL_CUSTOM_OPTIONS"] = {"ssl": {"ca": "/path/to/ca-file"}}  # https://mysqlclient.readthedocs.io/user_guide.html#functions-and-attributes
 
 mysql = MySQL(app)
 

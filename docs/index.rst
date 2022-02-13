@@ -39,7 +39,7 @@ Next, add a :class:`~flask_mysqldb.MySQL` instance to your code:
       app.config["MYSQL_DB"] = "database"
       # Extra configs, optional:
       app.config["MYSQL_CURSORCLASS"] = "DictCursor"
-      app.config["MYSQL_EXTRA_KWARGS"] = {"ssl": {"ca": "/path/to/ca-file"}}
+      app.config["MYSQL_CUSTOM_OPTIONS"] = {"ssl": {"ca": "/path/to/ca-file"}}  # https://mysqlclient.readthedocs.io/user_guide.html#functions-and-attributes
 
       mysql = MySQL(app)
 
@@ -77,7 +77,7 @@ directives:
 ``MYSQL_SQL_MODE``           If present, the session SQL mode will be set to the given string.
 ``MYSQL_CURSORCLASS``        If present, the cursor class will be set to the given string.
 ``MYSQL_AUTOCOMMIT``         If enabled, will use the autocommit feature of MySQL. Default: False
-``MYSQL_EXTRA_KWARGS``       Use this to pass any extra directives that are not defined here. Default: None
+``MYSQL_CUSTOM_OPTIONS``     ``dict`` of options you want to set in this format: {option: value}. See all available option `here <# https://mysqlclient.readthedocs.io/user_guide.html#functions-and-attributes>`_. Default: ``None``
 ============================ ===================================================
 
 
@@ -99,7 +99,7 @@ Changes:
 - 1.0.0: February 13, 2022
 
   - Added option for autocommit. Thanks to `@shaunpud <https://github.com/shaunpud>`_ on GitHub.
-  - Added option to pass any extra configuration to mysqlclient.
+  - Added option to pass any extra configuration to mysqlclient with MYSQL_CUSTOM_OPTIONS.
 
 - 0.2.0: September 5, 2015
 

@@ -32,7 +32,7 @@ class MySQL(object):
         app.config.setdefault("MYSQL_SQL_MODE", None)
         app.config.setdefault("MYSQL_CURSORCLASS", None)
         app.config.setdefault("MYSQL_AUTOCOMMIT", False)
-        app.config.setdefault("MYSQL_EXTRA_KWARGS", None)
+        app.config.setdefault("MYSQL_CUSTOM_OPTIONS", None)
 
         if hasattr(app, "teardown_appcontext"):
             app.teardown_appcontext(self.teardown)
@@ -82,8 +82,8 @@ class MySQL(object):
         if current_app.config["MYSQL_AUTOCOMMIT"]:
             kwargs["autocommit"] = current_app.config["MYSQL_AUTOCOMMIT"]
 
-        if current_app.config["MYSQL_EXTRA_KWARGS"]:
-            kwargs.update(current_app.config["MYSQL_EXTRA_KWARGS"])
+        if current_app.config["MYSQL_CUSTOM_OPTIONS"]:
+            kwargs.update(current_app.config["MYSQL_CUSTOM_OPTIONS"])
 
         return MySQLdb.connect(**kwargs)
 
