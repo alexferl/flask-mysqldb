@@ -54,7 +54,7 @@ Why
 ---
 Why would you want to use this extension versus just using MySQLdb by itself?
 The only reason is that the extension was made using Flask's best practices in relation
-to resources that need caching on the [app context](http://flask.pocoo.org/docs/0.12/appcontext/#context-usage).
+to resources that need caching on the [app context](https://flask.palletsprojects.com/en/2.0.x/appcontext/).
 What that means is that the extension will manage creating and teardown the connection to MySQL
 for you while with if you were just using MySQLdb you would have to do it yourself.
 
