@@ -12,37 +12,46 @@ Flask-MySQLdb provides MySQL connection for Flask.
 Quickstart
 ----------
 
-First, install Flask-MySQLdb:
+First, you *may* need to install some dependencies for `mysqlclient <https://github.com/PyMySQL/mysqlclient)>`_
+if you don't already have them, see `here <https://github.com/PyMySQL/mysqlclient#install>`_.
 
-.. code-block:: bash
+Second, install Flask-MySQLdb:
 
-    $ pip install flask-mysqldb
+    .. code-block:: bash
+      pip install flask-mysqldb
 
 Flask-MySQLdb depends, and will install for you, recent versions of Flask
-(0.12.4 or later) and mysqlclient. Flask-MySQLdb is compatible
-with and tested on Python 2.7, 3.5, 3.6 and 3.7.
+(0.12.4 or later) and `mysqlclient <https://github.com/PyMySQL/mysqlclient)>`_.
+Flask-MySQLdb is compatible with and tested with Python 3.7+. It *should* work on any
+version from Python 2.7 and up, but is not supported.
 
 Next, add a :class:`~flask_mysqldb.MySQL` instance to your code:
 
-.. code-block:: python
+    .. code-block:: python
+      from flask import Flask
+      from flask_mysqldb import MySQL
 
-    from flask import Flask
-    from flask_mysqldb import MySQL
+      app = Flask(__name__)
 
-    app = Flask(__name__)
-    mysql = MySQL(app)
+      # Required
+      app.config["MYSQL_USER"] = "user"
+      app.config["MYSQL_PASSWORD"] = "password"
+      app.config["MYSQL_DB"] = "database"
+      # Extra configs, optional:
+      app.config["MYSQL_CURSORCLASS"] = "DictCursor"
+      app.config["MYSQL_EXTRA_KWARGS"] = {"ssl": {"ca": "/path/to/ca-file"}}
 
+      mysql = MySQL(app)
 
-    @app.route('/')
-    def users():
-        cur = mysql.connection.cursor()
-        cur.execute('''SELECT user, host FROM mysql.user''')
-        rv = cur.fetchall()
-        return str(rv)
+      @app.route("/")
+      def users():
+          cur = mysql.connection.cursor()
+          cur.execute("""SELECT user, host FROM mysql.user""")
+          rv = cur.fetchall()
+          return str(rv)
 
-    if __name__ == '__main__':
-        app.run(debug=True)
-
+      if __name__ == "__main__":
+          app.run(debug=True)
 
 Configuration
 -------------
@@ -68,6 +77,7 @@ directives:
 ``MYSQL_SQL_MODE``           If present, the session SQL mode will be set to the given string.
 ``MYSQL_CURSORCLASS``        If present, the cursor class will be set to the given string.
 ``MYSQL_AUTOCOMMIT``         If enabled, will use the autocommit feature of MySQL. Default: False
+``MYSQL_EXTRA_KWARGS``       Use this to pass any extra directives that are not defined here. Default: None
 ============================ ===================================================
 
 
@@ -86,11 +96,15 @@ History
 
 Changes:
 
-- 0.2.1: September 4, 2020
-  - Added option for autocommit.
+- 1.0.0: February 13, 2022
+
+  - Added option for autocommit. Thanks to `@shaunpud <https://github.com/shaunpud>`_ on GitHub.
+  - Added option to pass any extra configuration to mysqlclient.
 
 - 0.2.0: September 5, 2015
+
   - Added option to change the cursor. Thanks to `@Sp1tF1r3 <https://github.com/Sp1tF1r3>`_ on GitHub.
 
 - 0.1.1: February 14, 2015
+
   - Initial Release

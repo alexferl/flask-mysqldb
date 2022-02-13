@@ -8,13 +8,18 @@ Flask-MySQLdb provides MySQL connection for Flask.
 Quickstart
 ----------
 
-First, install Flask-MySQLdb:
-    
-    $ pip install flask-mysqldb
-    
+First, you _may_ need to install some dependencies for [mysqlclient](https://github.com/PyMySQL/mysqlclient)
+if you don't already have them, see [here](https://github.com/PyMySQL/mysqlclient#install).
+
+Second, install Flask-MySQLdb:
+```shell
+pip install flask-mysqldb
+```
+
 Flask-MySQLdb depends, and will install for you, recent versions of Flask
-(0.12.4 or later) and [mysqlclient](https://github.com/PyMySQL/mysqlclient-python). Flask-MySQLdb is compatible
-with and tested on Python 2.7, 3.5, 3.6 and 3.7.
+(0.12.4 or later) and [mysqlclient](https://github.com/PyMySQL/mysqlclient-python).
+Flask-MySQLdb is compatible with and tested with Python 3.7+. It _should_ work on any
+version from Python 2.7 and up, but is not supported.
 
 Next, add a ``MySQL`` instance to your code:
 
@@ -24,21 +29,24 @@ from flask_mysqldb import MySQL
 
 app = Flask(__name__)
 
-app.config['MYSQL_USER'] = 'user'
-app.config['MYSQL_PASSWORD'] = 'password'
-app.config['MYSQL_DB'] = 'database'
-app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
+# Required
+app.config["MYSQL_USER"] = "user"
+app.config["MYSQL_PASSWORD"] = "password"
+app.config["MYSQL_DB"] = "database"
+# Extra configs, optional:
+app.config["MYSQL_CURSORCLASS"] = "DictCursor"
+app.config["MYSQL_EXTRA_KWARGS"] = {"ssl": {"ca": "/path/to/ca-file"}}
 
 mysql = MySQL(app)
 
-@app.route('/')
+@app.route("/")
 def users():
     cur = mysql.connection.cursor()
-    cur.execute('''SELECT user, host FROM mysql.user''')
+    cur.execute("""SELECT user, host FROM mysql.user""")
     rv = cur.fetchall()
     return str(rv)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)
 ```
 
@@ -46,7 +54,11 @@ Other configuration directives can be found [here](http://flask-mysqldb.readthed
 
 Why
 ---
-Why would you want to use this extension versus just using MySQLdb by itself? The only reason is that the extension was made using Flask's best pratices in relation to resources that need caching on the [app context](http://flask.pocoo.org/docs/0.12/appcontext/#context-usage). What that means is that the extension will manage creating and teardown the connection to MySQL for you while with if you were just using MySQLdb you would have to do it yourself.
+Why would you want to use this extension versus just using MySQLdb by itself?
+The only reason is that the extension was made using Flask's best practices in relation
+to resources that need caching on the [app context](http://flask.pocoo.org/docs/0.12/appcontext/#context-usage).
+What that means is that the extension will manage creating and teardown the connection to MySQL
+for you while with if you were just using MySQLdb you would have to do it yourself.
 
 
 Resources
