@@ -96,6 +96,10 @@ History
 
 Changes:
 
+- 1.0.1: February 13, 2022
+
+  - Fix documentation.
+
 - 1.0.0: February 13, 2022
 
   - Added option for autocommit. Thanks to `@shaunpud <https://github.com/shaunpud>`_ on GitHub.
