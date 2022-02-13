@@ -67,6 +67,7 @@ directives:
                              if they are not equal. Default: 'utf-8'
 ``MYSQL_SQL_MODE``           If present, the session SQL mode will be set to the given string.
 ``MYSQL_CURSORCLASS``        If present, the cursor class will be set to the given string.
+``MYSQL_AUTOCOMMIT``         If enabled, will use the autocommit feature of MySQL. Default: False
 ============================ ===================================================
 
 
@@ -84,6 +85,9 @@ History
 -------
 
 Changes:
+
+- 0.2.1: September 4, 2020
+  - Added option for autocommit.
 
 - 0.2.0: September 5, 2015
   - Added option to change the cursor. Thanks to `@Sp1tF1r3 <https://github.com/Sp1tF1r3>`_ on GitHub.
