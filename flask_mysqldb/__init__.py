@@ -104,3 +104,4 @@ class MySQL(object):
     def teardown(self, exception):
         if hasattr(g, "mysql_db"):
             g.mysql_db.close()
+
