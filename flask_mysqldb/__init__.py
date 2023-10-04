@@ -1,14 +1,18 @@
 from importlib.metadata import version
+
 flask_major_version = int(version("flask")[0])
 
 import MySQLdb
 from MySQLdb import cursors
 from flask import current_app
+
 if flask_major_version >= 3:
     from flask import g
+
     ctx = g
 else:
     from flask import _app_ctx_stack
+
     ctx = _app_ctx_stack.top
 
 
