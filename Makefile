@@ -7,17 +7,17 @@ PYTHON=${VENV_NAME}/bin/python3
 .DEFAULT: help
 help:
 	@echo "make dev"
-	@echo "       prepare development environment, use only once"
+	@echo "	prepare development environment, use only once"
 	@echo "make clean"
-	@echo "       delete development environment"
+	@echo "	delete development environment"
 	@echo "make update"
-	@echo "       update dependencies"
+	@echo "	update dependencies"
 	@echo "make test"
-	@echo "       run tests"
+	@echo "	run tests"
 	@echo "make lint"
-	@echo "       run black"
+	@echo "	run black"
 	@echo "make pre-commit"
-	@echo "       run pre-commit hooks"
+	@echo "	run pre-commit hooks"
 
 dev:
 	make venv
@@ -41,7 +41,7 @@ test: venv
 	${PYTHON} -m pytest
 
 lint: venv
-	$(VENV_NAME)/bin/black -t py310 --exclude $(VENV_NAME) .
+	$(VENV_NAME)/bin/black --exclude $(VENV_NAME) .
 
 pre-commit: venv
 	$(VENV_NAME)/bin/pre-commit

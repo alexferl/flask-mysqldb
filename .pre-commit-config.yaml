@@ -1,6 +1,6 @@
 repos:
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v4.1.0
+  rev: v4.4.0
   hooks:
   - id: trailing-whitespace
   - id: end-of-file-fixer
@@ -8,8 +8,7 @@ repos:
     args: ['--fix=lf']
     description: Forces to replace line ending by the UNIX 'lf' character.
 - repo: https://github.com/psf/black
-  rev: 22.1.0
+  rev: 23.9.1
   hooks:
   - id: black
     language_version: python3
-    args: [-t, py310]

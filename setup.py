@@ -14,7 +14,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name="Flask-MySQLdb",
-    version="1.0.1",
+    version="2.0.0",
     url="https://github.com/alexferl/flask-mysqldb",
     license="MIT",
     author="Alexandre Ferland",
@@ -26,15 +26,16 @@ setup(
     zip_safe=False,
     include_package_data=True,
     platforms="any",
-    install_requires=["Flask>=0.12.4", "mysqlclient>=1.3.7"],
+    install_requires=["Flask>=1.0.4", "mysqlclient>=2.2.0"],
     classifiers=[
         "Environment :: Web Environment",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
-        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
 )

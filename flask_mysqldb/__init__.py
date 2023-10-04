@@ -1,9 +1,18 @@
+from importlib.metadata import version
+flask_major_version = int(version("flask")[0])
+
 import MySQLdb
 from MySQLdb import cursors
-from flask import _app_ctx_stack, current_app
+from flask import current_app
+if flask_major_version >= 3:
+    from flask import g
+    ctx = g
+else:
+    from flask import _app_ctx_stack
+    ctx = _app_ctx_stack.top
 
 
-class MySQL(object):
+class MySQL:
     def __init__(self, app=None):
         self.app = app
         if app is not None:
@@ -95,13 +104,11 @@ class MySQL(object):
             unsuccessful.
         """
 
-        ctx = _app_ctx_stack.top
         if ctx is not None:
             if not hasattr(ctx, "mysql_db"):
                 ctx.mysql_db = self.connect
             return ctx.mysql_db
 
     def teardown(self, exception):
-        ctx = _app_ctx_stack.top
         if hasattr(ctx, "mysql_db"):
             ctx.mysql_db.close()
