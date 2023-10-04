@@ -1,6 +1,7 @@
 import MySQLdb
 from MySQLdb import cursors
-from flask import _app_ctx_stack, current_app
+
+from flask import g, current_app
 
 
 class MySQL(object):
@@ -95,13 +96,11 @@ class MySQL(object):
             unsuccessful.
         """
 
-        ctx = _app_ctx_stack.top
-        if ctx is not None:
-            if not hasattr(ctx, "mysql_db"):
-                ctx.mysql_db = self.connect
-            return ctx.mysql_db
+  
+        if not hasattr(g, "mysql_db"):
+            g.mysql_db = self.connect
+        return g.mysql_db
 
     def teardown(self, exception):
-        ctx = _app_ctx_stack.top
-        if hasattr(ctx, "mysql_db"):
-            ctx.mysql_db.close()
+        if hasattr(g, "mysql_db"):
+            g.mysql_db.close()
