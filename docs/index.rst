@@ -96,6 +96,10 @@ History
 
 Changes:
 
+- 2.0.0: October 4, 2023
+
+  - Add support for Flask 3.0.0+.
+
 - 1.0.1: February 13, 2022
 
   - Fix documentation.

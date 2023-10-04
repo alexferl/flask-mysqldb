@@ -15,9 +15,8 @@ pip install flask-mysqldb
 ```
 
 Flask-MySQLdb depends, and will install for you, recent versions of Flask
-(0.12.4 or later) and [mysqlclient](https://github.com/PyMySQL/mysqlclient-python).
-Flask-MySQLdb is compatible with and tested with Python 3.7+. It _should_ work on any
-version from Python 2.7 and up, but is not supported.
+(1.0.4 or later) and [mysqlclient](https://github.com/PyMySQL/mysqlclient).
+Flask-MySQLdb is compatible with and tested with Python 3.8+.
 
 Next, add a ``MySQL`` instance to your code:
 
