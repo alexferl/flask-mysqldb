@@ -53,5 +53,8 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
+# pytest
+.pytest_cache
+
 # PyCharm
 .idea/
