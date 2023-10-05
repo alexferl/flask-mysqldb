@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+black = "==23.9.1"
+pre-commit = "==3.4.0"
+pytest = "==7.4.2"
+
+[packages]
+mysqlclient = "==2.2.0"
+flask = "==3.0.0"
+
+[requires]
+python_version = "3.11"
