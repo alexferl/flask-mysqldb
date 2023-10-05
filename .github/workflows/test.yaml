@@ -58,4 +58,5 @@ jobs:
         env:
           FLASK: '${{ matrix.FLASK }}'
       - run: pip install -r requirements-dev.txt
+      - run: pip install .
       - run: pytest
