@@ -106,5 +106,5 @@ jobs:
       - run: pipenv install Flask==$FLASK
         env:
           FLASK: '${{ matrix.FLASK }}'
-      - run: pipenv install --env
+      - run: pipenv install --dev
       - run: pipenv run pytest
