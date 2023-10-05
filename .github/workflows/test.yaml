@@ -102,8 +102,8 @@ jobs:
         with:
           python-version: '${{ matrix.python-version }}'
       - uses: actions/checkout@v2
-      - run: pip install Flask==$FLASK
+      - run: pipenv install Flask==$FLASK
         env:
           FLASK: '${{ matrix.FLASK }}'
-      - run: pip install -r dev_requirements.txt
-      - run: pytest
+      - run: pipenv install --env
+      - run: pipenv run pytest
