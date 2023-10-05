@@ -3,7 +3,7 @@
 .DEFAULT: help
 help:
 	@echo "make dev"
-	@echo "	prepare development environment, use only once"
+	@echo "	prepare development environment"
 	@echo "make test"
 	@echo "	run tests"
 	@echo "make lint"
