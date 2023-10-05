@@ -11,6 +11,3 @@ pytest = "==7.4.2"
 [packages]
 mysqlclient = "==2.2.0"
 flask = "==3.0.0"
-
-[requires]
-python_version = "3.10"
