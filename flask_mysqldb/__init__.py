@@ -6,7 +6,7 @@ import MySQLdb
 from MySQLdb import cursors
 from flask import current_app
 
-if flask_major_version >= 3:
+if flask_major_version >= 2:
     from flask import g
 
     ctx = g
