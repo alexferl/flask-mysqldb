@@ -12,3 +12,10 @@ repos:
   hooks:
   - id: black
     language_version: python3
+- repo: https://github.com/d-ryzhykau/pipenv-lock-pre-commit
+  rev: 0.5.0
+  hooks:
+    - id: pipenv-lock
+    - id: pipenv-verify
+    - id: pipenv-requirements
+    - id: pipenv-requirements-dev
