@@ -58,4 +58,4 @@ for you while with if you were just using MySQLdb you would have to do it yourse
 
 ## Resources
 
-- [PyPI](https://pypi.python.org/pypi/Flask-MySQLdb)
+- [PyPI](https://pypi.org/project/Flask-MySQLdb/)
