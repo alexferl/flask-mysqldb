@@ -103,8 +103,9 @@ jobs:
           python-version: '${{ matrix.python-version }}'
       - uses: actions/checkout@v2
       - run: pip install pipenv
+      - run: pipenv install --dev
+      - run: pipenv uninstall Flask && pipenv clean
       - run: pipenv install Flask==$FLASK
         env:
           FLASK: '${{ matrix.FLASK }}'
-      - run: pipenv install --dev
       - run: pipenv run pytest
