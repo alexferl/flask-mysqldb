@@ -8,6 +8,7 @@ black = "==23.9.1"
 exceptiongroup = "==1.1.3"
 pre-commit = "==3.4.0"
 pytest = "==7.4.2"
+tomli = "==2.0.1"
 
 [packages]
 mysqlclient = "==2.2.0"
