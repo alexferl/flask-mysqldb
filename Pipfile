@@ -8,6 +8,6 @@ mysqlclient = "==2.2.0"
 flask = "==3.0.0"
 
 [dev-packages]
-black = "==23.9.1"
+black = "==24.3.0"
 pre-commit = "==3.4.0"
 pytest = "==7.4.2"
