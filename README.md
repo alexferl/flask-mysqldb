@@ -1,9 +1,7 @@
 # Flask-MySQLdb
-
 Flask-MySQLdb provides MySQL connection for Flask.
 
 ## Quickstart
-
 First, you _may_ need to install some dependencies for [mysqlclient](https://github.com/PyMySQL/mysqlclient)
 if you don't already have them, see [here](https://github.com/PyMySQL/mysqlclient#install).
 
@@ -13,7 +11,7 @@ pip install flask-mysqldb
 ```
 
 Flask-MySQLdb depends, and will install for you, recent versions of Flask
-(1.0.4 or later) and [mysqlclient](https://github.com/PyMySQL/mysqlclient).
+(2.2.5 or later) and [mysqlclient](https://github.com/PyMySQL/mysqlclient).
 Flask-MySQLdb is compatible with and tested with Python 3.8+.
 
 Next, add a `MySQL` instance to your code:
@@ -48,7 +46,6 @@ if __name__ == "__main__":
 Other configuration directives can be found [here](https://github.com/alexferl/flask-mysqldb/blob/master/flask_mysqldb/__init__.py#L31).
 
 ## Why
-
 Why would you want to use this extension versus just using MySQLdb by itself?
 The only reason is that the extension was made using Flask's best practices in relation
 to resources that need caching on the [app context](https://flask.palletsprojects.com/en/2.0.x/appcontext/).
@@ -57,5 +54,4 @@ for you while with if you were just using MySQLdb you would have to do it yourse
 
 
 ## Resources
-
 - [PyPI](https://pypi.org/project/Flask-MySQLdb/)
