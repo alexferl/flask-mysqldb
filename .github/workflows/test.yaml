@@ -14,7 +14,7 @@ jobs:
         include:
           - os: ubuntu-latest
             python-version: '3.8'
-            FLASK: 3.0.0
+            FLASK: 3.0.2
           - os: ubuntu-latest
             python-version: '3.8'
             FLASK: 2.3.3
@@ -23,7 +23,7 @@ jobs:
             FLASK: 2.2.5
           - os: ubuntu-latest
             python-version: '3.9'
-            FLASK: 3.0.0
+            FLASK: 3.0.2
           - os: ubuntu-latest
             python-version: '3.9'
             FLASK: 2.3.3
@@ -32,7 +32,7 @@ jobs:
             FLASK: 2.2.5
           - os: ubuntu-latest
             python-version: '3.10'
-            FLASK: 3.0.0
+            FLASK: 3.0.2
           - os: ubuntu-latest
             python-version: '3.10'
             FLASK: 2.3.3
@@ -41,12 +41,21 @@ jobs:
             FLASK: 2.2.5
           - os: ubuntu-latest
             python-version: '3.11'
-            FLASK: 3.0.0
+            FLASK: 3.0.2
           - os: ubuntu-latest
             python-version: '3.11'
             FLASK: 2.3.3
           - os: ubuntu-latest
             python-version: '3.11'
+            FLASK: 2.2.5
+          - os: ubuntu-latest
+            python-version: '3.12'
+            FLASK: 3.0.2
+          - os: ubuntu-latest
+            python-version: '3.12'
+            FLASK: 2.3.3
+          - os: ubuntu-latest
+            python-version: '3.12'
             FLASK: 2.2.5
     steps:
       - name: 'Set up Python ${{ matrix.python-version }}'

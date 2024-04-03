@@ -4,10 +4,10 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-mysqlclient = "==2.2.0"
-flask = "==3.0.0"
+mysqlclient = "==2.2.4"
+flask = "==3.0.2"
 
 [dev-packages]
-black = "==23.9.1"
-pre-commit = "==3.4.0"
-pytest = "==7.4.2"
+black = "==24.3.0"
+pre-commit = "==3.5.0"
+pytest = "==8.1.1"
