@@ -113,6 +113,9 @@ class MySQL:
                 ctx.mysql_db = self.connect
             return ctx.mysql_db
 
-    def teardown(self, exception):
-        if hasattr(ctx, "mysql_db"):
-            ctx.mysql_db.close()
+        def teardown(self, exception):
+            if hasattr(ctx, "mysql_db"):
+                try:
+                    ctx.mysql_db.close()
+                except MySQLdb.OperationalError as e:
+                    current_app.logger.error(f"Error: {e}")
